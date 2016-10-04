@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NYX</title> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="/assets/styles/nyx.css">
+	<script src="/assets/scripts/libs/jquery-2.2.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="/assets/scripts/libs/bootstrap-select.min.js"></script>
+	<script src="/assets/scripts/common.js"></script>
+	<!--[if lt IE 9]>
+		<script src="/assets/scripts/libs/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="page-dashboard">
+
+	<aside class="layout-header-utils">
+		<button type="button" class="btn-menus">메뉴 on/off</button>
+	
+		<p class="location">
+			<a href="#">Dashboard</a>
+			
+			&nbsp;
+		</p>
+
+		<ul class="list-utils">
+			<li>
+				<a href="#" class="user">username.kim</a>
+			</li>
+			<li>
+				<select class="selectpicker">
+					<option data-icon="en" selected>ENGLISH</option>
+					<option data-icon="ko">KOREAN</option>
+					<option data-icon="zh">CHINESE</option>
+				</select>
+			</li>
+			<li>
+				<a href="#" class="help">HELP</a>
+			</li>
+			<li>
+				<button type="button" class="logout">LOGOUT</button>
+			</li>
+		</ul>
+	</aside>
+
+
+	<nav class="layout-sidemenu">
+		<a href="./intro.html" class="btn-nyx-logo">NYX</a>
+
+		<ul class="list-menus">
+			<li data-state="is-selected">
+				<a href="#" class="menu dashboard has-submenus">Dashboard</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./dashboard.html">Dashboard</a></li>
+					<li><a href="./realtime_event.html">Realtime Event</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="menu zoning has-submenus">Zoning</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="#">Zones</a></li>
+					<li><a href="#">Zone Registration</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="menu node has-submenus">Node</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="#">Nodes</a></li>
+					<li><a href="#">Node Registration</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="menu analysis has-submenus">Analysis</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="#">Alarms</a></li>
+					<li><a href="#">Report</a></li>
+					<li><a href="#">Asset Management</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="menu user">User</a>
+			</li>
+			<li>
+				<a href="#" class="menu preferences">Preferences</a>
+			</li>
+		</ul>
+	</nav>
+
+
+
+	<main>
+		<div class="layout-contents">
+		
+			<section>
+				<header class="system-activity">
+					<div class="title">
+						<fieldset class="segmented-control">
+							<legend>Select Day/Month</legend>
+
+							<ul class="list">
+								<li>
+									<input type="radio" id="daily" name="unit" checked>
+									<label for="daily">Day</label>
+								</li>
+								<li>
+									<input type="radio" id="monthly" name="unit">
+									<label for="monthly">Month</label>
+								</li>
+							</ul>
+						</fieldset>
+
+						<h1>System activity</h1>
+					</div>
+
+					<ul class="list-dashboard-summary">
+						<li>
+							<div class="lds-item">
+								<em class="title">ELECTRICITY BILL</em>
+
+								<strong class="point usd">104.8 <span class="units">/MWh</span></strong>
+								<strong class="growth down">13.92<span>%</span></strong>
+								<p class="description">Average value of count in the past month</p>
+							</div>
+						</li>
+						<li>
+							<div class="lds-item">
+								<em class="title">POWER CONSUMPTION</em>
+
+								<strong class="point tachometer">2,356 <span class="units">MWh</span></strong>
+								<strong class="growth up">13.92<span>%</span></strong>
+								<p class="description">Average value of count in the past month</p>
+							</div>
+						</li>
+						<li>
+							<div class="lds-item">
+								<em class="title">EVENT COUNT</em>
+
+								<strong class="point bell">23,452</strong>
+								<strong class="growth">13.92<span>%</span></strong>
+								<p class="description">Average value of count in the past month</p>
+							</div>
+						</li>
+						<li>
+							<div class="lds-item">
+								<em class="title">FAULT COUNT</em>
+
+								<strong class="point exclamation-circle">87</strong>
+								<strong class="growth down">13.92<span>%</span></strong>
+								<p class="description">Description of the numbers</p>
+							</div>
+						</li>
+					</ul>
+				</header>
+			
+				
+				<div class="grid-dashboard">
+					<div class="grid-item map">
+						<div class="inner">
+							map
+						</div>
+					</div>
+					<div class="grid-item">
+						<div class="inner">
+							<strong class="grid-item-title">ZONE RANKING 5</strong>
+							<p class="grid-item-desc">Description of the graph</p>
+
+							<!-- chart -->
+							<div class="chart">
+								<img src="/assets/images/@temp/chart01.jpg" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="grid-item">
+						<div class="inner">
+							<ul class="list-chart">
+								<li>
+									<strong class="grid-item-title">ACTIVE POWER</strong>
+
+									<!-- chart -->
+									<div class="chart">
+										<img src="/assets/images/@temp/chart02_01.jpg" alt="">
+									</div>
+								</li>
+								<li>
+									<strong class="grid-item-title">NOISE</strong>
+
+									<!-- chart -->
+									<div class="chart">
+										<img src="/assets/images/@temp/chart02_02.jpg" alt="">
+									</div>
+								</li>
+								<li>
+									<strong class="grid-item-title">VIBRATION</strong>
+
+									<!-- chart -->
+									<div class="chart">
+										<img src="/assets/images/@temp/chart02_03.jpg" alt="">
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="grid-item">
+						<div class="inner">
+							<strong class="grid-item-title">LIVE DATA</strong>
+
+							<!-- chart -->
+							<div class="chart">
+								<img src="/assets/images/@temp/chart03.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</section>
+		</div>
+	</main>
+
+
+</body>
+</html>

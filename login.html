@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NYX</title> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="/assets/styles/nyx.css">
+	<script src="/assets/scripts/libs/jquery-2.2.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="/assets/scripts/libs/bootstrap-select.min.js"></script>
+	<script src="/assets/scripts/common.js"></script>
+	<!--[if lt IE 9]>
+		<script src="/assets/scripts/libs/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="page-login">
+
+	<main>
+		<div class="layout-login" data-bg-state="bg0">
+			<fieldset class="login-form">
+				<legend>NYX Login</legend>
+
+				<div class="login-form-inner">
+					<h1 class="login-title">NXY</h1>
+					<p class="description">
+						Smart lights, Smart street, Smart world
+					</p>
+
+					<label class="item id">
+						<input type="text" id="" name="" placeholder="ENTER YOUR ID">
+					</label>
+					<label class="item password">
+						<input type="password" id="" name="" placeholder="ENTER YOUR PASSWORD">
+					</label>
+
+					<label class="item">
+						<select class="selectpicker" title="SELECT LANGUAGE">
+							<option data-icon="en">ENGLISH</option>
+							<option data-icon="ko">KOREAN</option>
+							<option data-icon="zh">CHINESE</option>
+						</select>
+					</label>
+					<p>
+						<input type="checkbox" id="saveid" name="saveid">
+						<label for="saveid">SAVE ID</label>
+					</p>
+
+					<input type="submit" value="LOGIN" class="btn-submit">
+				</div>
+			</fieldset>
+
+			<div style="display: none;">
+				<img src="/assets/images/bg_login01.jpg" alt="">
+				<img src="/assets/images/bg_login02.jpg" alt="">
+				<img src="/assets/images/bg_login03.jpg" alt="">
+			</div>
+		</div>
+		<script>
+		$(document).ready(function(e) {
+			var index = 0;
+
+			function changeBackground() {
+				index++;
+				var $bg = $('.layout-login');
+				var value = 'bg'+(index%3);
+				$bg.attr('data-bg-state', value);
+			}
+
+			setInterval(changeBackground, 6000);
+		});
+		</script>
+	</main>
+
+
+</body>
+</html>

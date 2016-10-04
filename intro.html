@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NYX</title> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="/assets/styles/nyx.css">
+	<script src="/assets/scripts/libs/jquery-2.2.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="/assets/scripts/libs/bootstrap-select.min.js"></script>
+	<script src="/assets/scripts/common.js"></script>
+	<!--[if lt IE 9]>
+		<script src="/assets/scripts/libs/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="page-intro">
+
+	<aside class="layout-header-utils">
+		<button type="button" class="btn-menus">메뉴 on/off</button>
+	
+		<p class="location">
+			
+			
+			&nbsp;
+		</p>
+
+		<ul class="list-utils">
+			<li>
+				<a href="#" class="user">username.kim</a>
+			</li>
+			<li>
+				<select class="selectpicker">
+					<option data-icon="en" selected>ENGLISH</option>
+					<option data-icon="ko">KOREAN</option>
+					<option data-icon="zh">CHINESE</option>
+				</select>
+			</li>
+			<li>
+				<a href="#" class="help">HELP</a>
+			</li>
+			<li>
+				<button type="button" class="logout">LOGOUT</button>
+			</li>
+		</ul>
+	</aside>
+
+
+	<nav class="layout-sidemenu">
+		<a href="./intro.html" class="btn-nyx-logo">NYX</a>
+
+		<ul class="list-menus">
+			<li >
+				<a href="#" class="menu dashboard has-submenus">Dashboard</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./dashboard.html">Dashboard</a></li>
+					<li><a href="./realtime_event.html">Realtime Event</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="menu zoning has-submenus">Zoning</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="#">Zones</a></li>
+					<li><a href="#">Zone Registration</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="menu node has-submenus">Node</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="#">Nodes</a></li>
+					<li><a href="#">Node Registration</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="menu analysis has-submenus">Analysis</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="#">Alarms</a></li>
+					<li><a href="#">Report</a></li>
+					<li><a href="#">Asset Management</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="menu user">User</a>
+			</li>
+			<li>
+				<a href="#" class="menu preferences">Preferences</a>
+			</li>
+		</ul>
+	</nav>
+
+
+
+	<main>
+		<div class="layout-contents">
+			
+		
+			<div class="intro">
+				
+				<ul class="grid-intro">
+					<li>
+						<div class="grid-intro-item dashboard">
+							<h2 class="title">Dashboard</h2>
+							<p class="desc">
+								<strong>NYX</strong>
+							</p>
+
+							<div class="buttons">
+								<a href="#" class="btns btn-save">Save to INTRO</a>
+								<a href="#" class="btns btn-go">Go</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="grid-intro-item event-alarm">
+							<h2 class="title">New Event Alarm</h2>
+							<p class="desc">
+								<strong>126</strong>
+							</p>
+
+							<div class="buttons">
+								<a href="#" class="btns btn-save">Save to INTRO</a>
+								<a href="#" class="btns btn-go">Go</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="grid-intro-item node">
+							<h2 class="title"><span>Total</span> Node</h2>
+							<p class="desc">
+								<strong>126,486</strong>
+							</p>
+
+							<div class="buttons">
+								<a href="#" class="btns btn-save">Save to INTRO</a>
+								<a href="#" class="btns btn-go">Go</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="grid-intro-item zone">
+							<h2 class="title"><span>Total</span> Zone</h2>
+							<p class="desc">
+								<strong>3,689</strong>
+							</p>
+
+							<div class="buttons">
+								<a href="#" class="btns btn-save">Save to INTRO</a>
+								<a href="#" class="btns btn-go">Go</a>
+							</div>
+						</div>
+					</li>
+					<li class="empahsis combine line-break">
+						<div class="grid-intro-item anr">
+							<h2 class="title">Analysis and Report</h2>
+							<p class="desc">
+								Income form Node &amp; Zone
+							</p>
+
+							<div class="buttons">
+								<a href="#" class="btns btn-save">Save to INTRO</a>
+								<a href="#" class="btns btn-go">Go</a>
+							</div>
+						</div>
+					</li>
+					<li class="empahsis">
+						<div class="grid-intro-item fault-event">
+							<p class="desc">
+								<strong>87</strong>
+							</p>
+	
+							<h2 class="title">Fault Event</h2>
+							<p class="desc">
+								We detect the error
+							</p>
+
+							<div class="buttons">
+								<a href="#" class="btns btn-save">Save to INTRO</a>
+								<a href="#" class="btns btn-go">Go</a>
+							</div>
+						</div>
+					</li>
+					<li class="empahsis">
+						<div class="grid-intro-item save-energy">
+							<p class="desc">
+								<strong>25.2%</strong>
+							</p>
+	
+							<h2 class="title">Save Energy</h2>
+							<p class="desc">
+								Monthly income
+							</p>
+
+							<div class="buttons">
+								<a href="#" class="btns btn-save">Save to INTRO</a>
+								<a href="#" class="btns btn-go">Go</a>
+							</div>
+						</div>
+					</li>
+					<li class="line-break">
+						<div class="grid-intro-item users">
+							<h2 class="title">Users</h2>
+							<p class="desc">
+								<strong>10</strong>
+							</p>
+
+							<div class="buttons">
+								<a href="#" class="btns btn-save">Save to INTRO</a>
+								<a href="#" class="btns btn-go">Go</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="grid-intro-item preferences">
+							<h2 class="title">Preferences</h2>
+							<p class="desc">
+								Personalized<br>smart environments
+							</p>
+
+							<div class="buttons">
+								<a href="#" class="btns btn-save">Save to INTRO</a>
+								<a href="#" class="btns btn-go">Go</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="grid-intro-item widget01">
+							<h2 class="title">Widget Name</h2>
+							<p class="desc">
+								<strong>124</strong>
+							</p>
+
+							<div class="buttons">
+								<a href="#" class="btns btn-save">Save to INTRO</a>
+								<a href="#" class="btns btn-go">Go</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="grid-intro-item widget02">
+							<h2 class="title">Widget Name</h2>
+							<p class="desc">
+								Description
+							</p>
+
+							<div class="buttons">
+								<a href="#" class="btns btn-save">Save to INTRO</a>
+								<a href="#" class="btns btn-go">Go</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+
+
+		</div>
+	</main>
+
+
+</body>
+</html>
