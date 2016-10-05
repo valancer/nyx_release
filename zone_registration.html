@@ -18,14 +18,14 @@
 	<![endif]-->
 </head>
 
-<body class="filelist">
+<body class="page-dashboard">
 
 	<aside class="layout-header-utils">
 		<button type="button" class="btn-menus">메뉴 on/off</button>
 	
 		<p class="location">
-			<a href="#">Dashboard</a>
-			
+			<a href="#">Zoning</a>
+			<a href="#">Zone Registration</a>
 			&nbsp;
 		</p>
 
@@ -62,7 +62,7 @@
 					<li><a href="./realtime_event.html">Realtime Event</a></li>
 				</ul>
 			</li>
-			<li >
+			<li data-state="is-selected">
 				<a href="#" class="menu zoning has-submenus">Zoning</a>
 
 				<ul class="list-sub-menus">
@@ -117,129 +117,14 @@
 
 
 
-	<main>
-		<div class="layout-contents">
-			
-
-			<h1>FILELIST</h1>
-			<ul>
-				<li><a href="./login.html">login.html</a></li>
-				<li><a href="./intro.html">intro.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>DASHBOARD</h2>
-			<ul>
-				<li><a href="./dashboard.html">dashboard.html</a></li>
-				<li><a href="./realtime_event.html">realtime_event.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>ZONING</h2>
-			<ul>
-				<li><a href="./zones.html">zones.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Node</h2>
-			<ul>
-				<li><a href="./nodes.html">nodes.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Analysis</h2>
-			<ul>
-				<li><a href="./analysis_alarms.html">alarms.html</a></li>
-				<li><a href="./analysis_reports.html">reports.html</a></li>
-				<li><a href="./analysis_asset.html">asset_management.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Users</h2>
-			<ul>
-				<li><a href="./users.html">users.html</a></li>
-				<li><a href="./users_registration.html">users_registration.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Modals</h2>
-			<ul>
-				<li><a href="#" class="btn-alert-nagative">부정의 메시지</a></li>
-				<li><a href="#" class="btn-confirm">질의, 알림, 확인인 경우</a></li>
-				<li><a href="#" class="btn-alert-error">오류 메시지</a></li>
-				<li><a href="#" class="btn-alert">피드백, 성공의 메시지인 경우</a></li>
-			</ul>
-			<script>
-			$(document).ready(function(e) {
-				// 부정의 메시지
-				$('.btn-alert-nagative').on('click', function(e) {
-					e.preventDefault();
-
-					$.alert({
-						icon: 'alert-nagative',
-						content: '이미 등록된 아이디 입니다.<br>다시 입력해주세요.',
-						confirmButton: 'Cancel',
-						confirm: function(){
-							console.log('cancel');
-						}
-    				});
-				});
-
-				// 질의, 알림, 확인인 경우
-				$('.btn-confirm').on('click', function(e) {
-					e.preventDefault();
-
-					$.confirm({
-						icon: 'confirm',
-						content: '존에 포함된 모든 정보가 삭제됩니다.<br>정말 삭제하시겠습니까?',
-						confirmButton: 'OK',
-						cancelButton: 'Cancel',
-						cancel: function(){
-							console.log('cancel');
-						},
-						confirm: function(){
-							console.log('ok');
-						}
-    				});
-				});
-
-				// 부정의 메시지
-				$('.btn-alert-error').on('click', function(e) {
-					e.preventDefault();
-
-					$.alert({
-						icon: 'alert-error',
-						content: '오류입니다. 다시 입력해주세요.',
-						confirmButton: 'Cancel',
-						confirm: function(){
-							console.log('cancel');
-						}
-    				});
-				});
-
-				// 부정의 메시지
-				$('.btn-alert').on('click', function(e) {
-					e.preventDefault();
-
-					$.alert({
-						icon: 'alert',
-						content: 'NYX 등록을 신청했습니다.',
-						confirmButton: 'Cancel',
-						confirm: function(){
-							console.log('cancel');
-						}
-    				});
-				});
-			});
-			</script>
+	<main class="layout-contents">
+		<div class="layout-contents-inner">
+		
+			<section>
+				
 
 
+			</section>
 		</div>
 	</main>
 

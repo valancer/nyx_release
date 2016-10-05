@@ -18,14 +18,14 @@
 	<![endif]-->
 </head>
 
-<body class="filelist">
+<body class="page-analysis">
 
 	<aside class="layout-header-utils">
 		<button type="button" class="btn-menus">메뉴 on/off</button>
 	
 		<p class="location">
-			<a href="#">Dashboard</a>
-			
+			<a href="#">Analysis</a>
+			<a href="#">Reports</a>
 			&nbsp;
 		</p>
 
@@ -78,7 +78,7 @@
 					<li><a href="#notyet">Node Registration</a></li>
 				</ul>
 			</li>
-			<li >
+			<li data-state="is-selected">
 				<a href="#" class="menu analysis has-submenus">Analysis</a>
 
 				<ul class="list-sub-menus">
@@ -117,129 +117,75 @@
 
 
 
-	<main>
-		<div class="layout-contents">
-			
+	<main class="layout-contents">
+		<div class="layout-contents-inner">
+		
+			<section>
+				<header class="page-title">
+					<h1 class="title">Reports</h1>
+				</header>
 
-			<h1>FILELIST</h1>
-			<ul>
-				<li><a href="./login.html">login.html</a></li>
-				<li><a href="./intro.html">intro.html</a></li>
-			</ul>
+				<!--  검색 -->
+				<fieldset class="search-container">
+					<legend>search</legend>
 
-			<br>
+					<div class="right-content-view">
+						<!-- 데이터 리스트 페이지당 갯수 설정 -->
+						<label for="">List view</label>
+						<select name="" id="" class="select">
+							<option value="">15</option>
+						</select>
 
-			<h2>DASHBOARD</h2>
-			<ul>
-				<li><a href="./dashboard.html">dashboard.html</a></li>
-				<li><a href="./realtime_event.html">realtime_event.html</a></li>
-			</ul>
+					</div>
+					
+					<div class="left-content-view">
+						<span class="datepicker">
+							<input type="text" name="daterange" id="" value="">
+						</span>
 
-			<br>
+						<select name="" id="" class="select">
+							<option value="">Zone ID</option>
+						</select>
+						<select name="" id="" class="select">
+							<option value="">Node ID</option>
+						</select>
 
-			<h2>ZONING</h2>
-			<ul>
-				<li><a href="./zones.html">zones.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Node</h2>
-			<ul>
-				<li><a href="./nodes.html">nodes.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Analysis</h2>
-			<ul>
-				<li><a href="./analysis_alarms.html">alarms.html</a></li>
-				<li><a href="./analysis_reports.html">reports.html</a></li>
-				<li><a href="./analysis_asset.html">asset_management.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Users</h2>
-			<ul>
-				<li><a href="./users.html">users.html</a></li>
-				<li><a href="./users_registration.html">users_registration.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Modals</h2>
-			<ul>
-				<li><a href="#" class="btn-alert-nagative">부정의 메시지</a></li>
-				<li><a href="#" class="btn-confirm">질의, 알림, 확인인 경우</a></li>
-				<li><a href="#" class="btn-alert-error">오류 메시지</a></li>
-				<li><a href="#" class="btn-alert">피드백, 성공의 메시지인 경우</a></li>
-			</ul>
-			<script>
-			$(document).ready(function(e) {
-				// 부정의 메시지
-				$('.btn-alert-nagative').on('click', function(e) {
-					e.preventDefault();
-
-					$.alert({
-						icon: 'alert-nagative',
-						content: '이미 등록된 아이디 입니다.<br>다시 입력해주세요.',
-						confirmButton: 'Cancel',
-						confirm: function(){
-							console.log('cancel');
+						<select name="" id="" class="select">
+							<option value="">ALL</option>
+						</select>
+						
+						<button type="submit" class="btn-submit search">SEARCH</button>
+					</div>
+				</fieldset>
+				<script>
+				$(document).ready(function() {
+					var start = moment().subtract(29, 'days');
+					var end = moment();
+					
+					$('input[name="daterange"]').daterangepicker({
+						"autoApply": true,
+						startDate: start,
+						endDate: end,
+						locale: {
+							format: 'YYYY-MM-DD'
 						}
-    				});
+					}, function(start, end, label) {
+						console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+					});
 				});
+				</script>
 
-				// 질의, 알림, 확인인 경우
-				$('.btn-confirm').on('click', function(e) {
-					e.preventDefault();
+				
+				<div class="map-container">
+					<div class="inner">
+						map container
+					</div>			
+				</div>
 
-					$.confirm({
-						icon: 'confirm',
-						content: '존에 포함된 모든 정보가 삭제됩니다.<br>정말 삭제하시겠습니까?',
-						confirmButton: 'OK',
-						cancelButton: 'Cancel',
-						cancel: function(){
-							console.log('cancel');
-						},
-						confirm: function(){
-							console.log('ok');
-						}
-    				});
-				});
-
-				// 부정의 메시지
-				$('.btn-alert-error').on('click', function(e) {
-					e.preventDefault();
-
-					$.alert({
-						icon: 'alert-error',
-						content: '오류입니다. 다시 입력해주세요.',
-						confirmButton: 'Cancel',
-						confirm: function(){
-							console.log('cancel');
-						}
-    				});
-				});
-
-				// 부정의 메시지
-				$('.btn-alert').on('click', function(e) {
-					e.preventDefault();
-
-					$.alert({
-						icon: 'alert',
-						content: 'NYX 등록을 신청했습니다.',
-						confirmButton: 'Cancel',
-						confirm: function(){
-							console.log('cancel');
-						}
-    				});
-				});
-			});
-			</script>
+		
 
 
+			</section>
 		</div>
 	</main>
 

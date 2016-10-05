@@ -8,7 +8,10 @@
 	<link rel="stylesheet" href="assets/styles/nyx.css">
 	<script src="assets/scripts/libs/jquery-2.2.3.min.js"></script>
 	<script src="assets/scripts/libs/bootstrap.min.js"></script>
+	<script src="assets/scripts/libs/moment.min.js"></script>
+	<script src="assets/scripts/libs/daterangepicker.custom.js"></script>
 	<script src="assets/scripts/libs/bootstrap-select.min.js"></script>
+	<script src="assets/scripts/libs/jquery-confirm.custome.js"></script>
 	<script src="assets/scripts/common.js"></script>
 	<!--[if lt IE 9]>
 		<script src="assets/scripts/libs/html5shiv.min.js"></script>
@@ -59,38 +62,57 @@
 					<li><a href="./realtime_event.html">Realtime Event</a></li>
 				</ul>
 			</li>
-			<li>
+			<li >
 				<a href="#" class="menu zoning has-submenus">Zoning</a>
 
 				<ul class="list-sub-menus">
-					<li><a href="#">Zones</a></li>
-					<li><a href="#">Zone Registration</a></li>
+					<li><a href="./zones.html">Zones</a></li>
+					<li><a href="#notyet">Zone Registration</a></li>
 				</ul>
 			</li>
-			<li>
+			<li >
 				<a href="#" class="menu node has-submenus">Node</a>
 
 				<ul class="list-sub-menus">
-					<li><a href="#">Nodes</a></li>
-					<li><a href="#">Node Registration</a></li>
+					<li><a href="./nodes.html">Nodes</a></li>
+					<li><a href="#notyet">Node Registration</a></li>
 				</ul>
 			</li>
-			<li>
+			<li >
 				<a href="#" class="menu analysis has-submenus">Analysis</a>
 
 				<ul class="list-sub-menus">
-					<li><a href="#">Alarms</a></li>
-					<li><a href="#">Report</a></li>
-					<li><a href="#">Asset Management</a></li>
+					<li><a href="./analysis_alarms.html">Alarms</a></li>
+					<li><a href="./analysis_reports.html">Report</a></li>
+					<li><a href="./analysis_asset.html">Asset Management</a></li>
 				</ul>
 			</li>
-			<li>
-				<a href="#" class="menu user">User</a>
+			<li >
+				<a href="./users.html" class="menu user">User</a>
 			</li>
-			<li>
+			<li >
 				<a href="#" class="menu preferences">Preferences</a>
 			</li>
 		</ul>
+
+
+		<!-- 임시 : 개발소스엔 추가하지 않습니다. -->
+		<ul class="events">
+			<li>
+				<button type="button" class="btn-trigger red-alert">알람 이벤트 발생</button>
+			</li>
+		</ul>
+		<script>
+		$(document).ready(function(e) {
+			$('.btn-trigger.red-alert').on('click', function(e) {
+				$('aside.event-alarm-container').attr('data-state', 'red-alert');
+
+				$('aside.event-alarm-container').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+					$(this).attr('data-state', '');
+				});
+			});
+		});	
+		</script>
 	</nav>
 
 
@@ -172,7 +194,7 @@
 
 
 				<!-- Event Alarm -->
-				<aside data-state="" class="event-alarm">
+				<aside data-state="" class="event-alarm-container">
 					<button type="button" class="btn-toggle-event">EVENT ALARM</button>
 
 					<p class="btns">
@@ -270,12 +292,12 @@
 				<script>
 				$(document).ready(function(e) {
 					/* close button */
-					$('.event-alarm .btn-toggle-event, .event-alarm .btn-close').on('click', function(e) {
-						$('.event-alarm').attr('data-state', $('.event-alarm').attr('data-state') == '' ? 'is-open' : '')
+					$('.event-alarm-container .btn-toggle-event, .event-alarm-container .btn-close').on('click', function(e) {
+						$('.event-alarm-container').attr('data-state', $('.event-alarm-container').attr('data-state') == '' ? 'is-open' : '')
 					});
 
 					/* help button */
-					$('.event-alarm .btn-help, .popup-icon-guide .btn-close').on('click', function(e) {
+					$('.event-alarm-container .btn-help, .popup-icon-guide .btn-close').on('click', function(e) {
 						var target = $(this).val();
 						$(target).toggle();
 					});

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NYX</title> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="assets/styles/nyx.css">
+	<script src="assets/scripts/libs/jquery-2.2.3.min.js"></script>
+	<script src="assets/scripts/libs/bootstrap.min.js"></script>
+	<script src="assets/scripts/libs/moment.min.js"></script>
+	<script src="assets/scripts/libs/daterangepicker.custom.js"></script>
+	<script src="assets/scripts/libs/bootstrap-select.min.js"></script>
+	<script src="assets/scripts/libs/jquery-confirm.custome.js"></script>
+	<script src="assets/scripts/common.js"></script>
+	<!--[if lt IE 9]>
+		<script src="assets/scripts/libs/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="page-analysis">
+
+	<aside class="layout-header-utils">
+		<button type="button" class="btn-menus">메뉴 on/off</button>
+	
+		<p class="location">
+			<a href="#">Analysis</a>
+			<a href="#">Alarms</a>
+			&nbsp;
+		</p>
+
+		<ul class="list-utils">
+			<li>
+				<a href="#" class="user">username.kim</a>
+			</li>
+			<li>
+				<select class="selectpicker">
+					<option data-icon="en" selected>ENGLISH</option>
+					<option data-icon="ko">KOREAN</option>
+					<option data-icon="zh">CHINESE</option>
+				</select>
+			</li>
+			<li>
+				<a href="#" class="help">HELP</a>
+			</li>
+			<li>
+				<button type="button" class="logout">LOGOUT</button>
+			</li>
+		</ul>
+	</aside>
+
+
+	<nav class="layout-sidemenu">
+		<a href="./intro.html" class="btn-nyx-logo">NYX</a>
+
+		<ul class="list-menus">
+			<li >
+				<a href="#" class="menu dashboard has-submenus">Dashboard</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./dashboard.html">Dashboard</a></li>
+					<li><a href="./realtime_event.html">Realtime Event</a></li>
+				</ul>
+			</li>
+			<li >
+				<a href="#" class="menu zoning has-submenus">Zoning</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./zones.html">Zones</a></li>
+					<li><a href="#notyet">Zone Registration</a></li>
+				</ul>
+			</li>
+			<li >
+				<a href="#" class="menu node has-submenus">Node</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./nodes.html">Nodes</a></li>
+					<li><a href="#notyet">Node Registration</a></li>
+				</ul>
+			</li>
+			<li data-state="is-selected">
+				<a href="#" class="menu analysis has-submenus">Analysis</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./analysis_alarms.html">Alarms</a></li>
+					<li><a href="./analysis_reports.html">Report</a></li>
+					<li><a href="./analysis_asset.html">Asset Management</a></li>
+				</ul>
+			</li>
+			<li >
+				<a href="./users.html" class="menu user">User</a>
+			</li>
+			<li >
+				<a href="#" class="menu preferences">Preferences</a>
+			</li>
+		</ul>
+
+
+		<!-- 임시 : 개발소스엔 추가하지 않습니다. -->
+		<ul class="events">
+			<li>
+				<button type="button" class="btn-trigger red-alert">알람 이벤트 발생</button>
+			</li>
+		</ul>
+		<script>
+		$(document).ready(function(e) {
+			$('.btn-trigger.red-alert').on('click', function(e) {
+				$('aside.event-alarm-container').attr('data-state', 'red-alert');
+
+				$('aside.event-alarm-container').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+					$(this).attr('data-state', '');
+				});
+			});
+		});	
+		</script>
+	</nav>
+
+
+
+	<main class="layout-contents">
+		<div class="layout-contents-inner">
+		
+			<section>
+				<header class="page-title">
+					<h1 class="title">Alarms</h1>
+				</header>
+
+				<!--  검색 -->
+				<fieldset class="search-container">
+					<legend>search</legend>
+
+					<div class="right-content-view">
+						<!-- 데이터 리스트 페이지당 갯수 설정 -->
+						<label for="">List view</label>
+						<select name="" id="" class="select">
+							<option value="">15</option>
+						</select>
+
+					</div>
+					
+					<div class="left-content-view">
+						<span class="datepicker">
+							<input type="text" name="daterange" id="" value="">
+						</span>
+
+						<select name="" id="" class="select">
+							<option value="">Zone ID</option>
+						</select>
+						<select name="" id="" class="select">
+							<option value="">Node ID</option>
+						</select>
+
+						<select name="" id="" class="select">
+							<option value="">ALL</option>
+						</select>
+						
+						<button type="submit" class="btn-submit search">SEARCH</button>
+					</div>
+				</fieldset>
+				<script>
+				$(document).ready(function() {
+					var start = moment().subtract(29, 'days');
+					var end = moment();
+					
+					$('input[name="daterange"]').daterangepicker({
+						"autoApply": true,
+						startDate: start,
+						endDate: end,
+						locale: {
+							format: 'YYYY-MM-DD'
+						}
+					}, function(start, end, label) {
+						console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+					});
+				});
+				</script>
+
+				
+				<div class="map-container">
+					<div class="inner">
+						map container
+					</div>			
+				</div>
+
+		
+				<table class="tbl-data-list">
+					<caption>data list</caption>
+					<colgroup>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">
+								Event Time
+								<button type="button" class="btn-sorting">sorting</button>
+							</th>
+							<th scope="col">
+								Node ID
+							</th>
+							<th scope="col">
+								Zone ID
+							</th>
+							<th scope="col">
+								Status
+							</th>
+							<th scope="col">
+								Descriptions
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<time datetime="2016-07-25 15:38:33.527">2016-07-25 15:38:33.527</time>
+							</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_00004</td>
+							<td>POWER</td>
+							<td>
+								<em class="status-icon power" value="86.144"><span>POWER</span></em>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<time datetime="2016-07-25 15:38:33.527">2016-07-25 15:38:33.527</time>
+							</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_00004</td>
+							<td>POWER</td>
+							<td>
+								<em class="status-icon power" value="6.359"><span>POWER</span></em>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<time datetime="2016-07-25 15:38:33.527">2016-07-25 15:38:33.527</time>
+							</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_00004</td>
+							<td>
+								<em class="status-txt minor">VIBRATION</em>
+							</td>
+							<td>
+								<em class="status-icon vibration fault" value="X:74 Y:187 Z:99"><span>VIBRATION</span></em>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<time datetime="2016-07-25 15:38:33.527">2016-07-25 15:38:33.527</time>
+							</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_00004</td>
+							<td>POWER</td>
+							<td>
+								<em class="status-icon power" value="6.359"><span>POWER</span></em>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<time datetime="2016-07-25 15:38:33.527">2016-07-25 15:38:33.527</time>
+							</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_00004</td>
+							<td>
+								<strong class="status-txt error">REBOOT</strong>
+							</td>
+							<td>
+								<time datetime="2016-07-25015:33:34" class="status-icon time fault">RESET TIME 2016-07-25015:33:34</time>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<time datetime="2016-07-25 15:38:33.527">2016-07-25 15:38:33.527</time>
+							</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_00004</td>
+							<td>
+								<strong class="status-txt error">STATUS</strong>
+							</td>
+							<td>
+								<em class="status-icon als fault" value=""><span>Fault</span></em>
+								<em class="status-icon vibration fault" value=""><span>Fault</span></em>
+								<em class="status-icon decibel" value=""><span>Normal</span></em>
+								<em class="status-icon frequency" value=""><span>Normal</span></em>
+								<em class="status-icon power" value=""><span>Normal</span></em>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<time datetime="2016-07-25 15:38:33.527">2016-07-25 15:38:33.527</time>
+							</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_00004</td>
+							<td>POWER</td>
+							<td>
+								<em class="status-icon power" value="86.144"><span>POWER</span></em>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<time datetime="2016-07-25 15:38:33.527">2016-07-25 15:38:33.527</time>
+							</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_00004</td>
+							<td>POWER</td>
+							<td>
+								<em class="status-icon power" value="86.144"><span>POWER</span></em>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<time datetime="2016-07-25 15:38:33.527">2016-07-25 15:38:33.527</time>
+							</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_00004</td>
+							<td>
+								<strong class="status-txt error">STATUS</strong>
+							</td>
+							<td>
+								<em class="status-icon als fault" value=""><span>Fault</span></em>
+								<em class="status-icon vibration fault" value=""><span>Fault</span></em>
+								<em class="status-icon decibel" value=""><span>Normal</span></em>
+								<em class="status-icon frequency" value=""><span>Normal</span></em>
+								<em class="status-icon power" value=""><span>Normal</span></em>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="tbl-data-utils">
+					<div class="right-contents-view">
+					</div>
+					
+					<div class="left-contents-view">
+						<!-- 데이터 리스트 네비게이션 -->
+						<div class="tbl-data-list-navigation">
+							<a href="#" class="btn first">처음으로</a>
+							<a href="#" class="btn prev">이전</a>
+							<a href="#" class="is-selected">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#" class="btn next">다음</a>
+							<a href="#" class="btn last">마지막으로</a>
+						</div>
+
+					</div>
+				</div>
+
+			</section>
+		</div>
+	</main>
+
+
+</body>
+</html>

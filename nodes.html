@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NYX</title> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="assets/styles/nyx.css">
+	<script src="assets/scripts/libs/jquery-2.2.3.min.js"></script>
+	<script src="assets/scripts/libs/bootstrap.min.js"></script>
+	<script src="assets/scripts/libs/moment.min.js"></script>
+	<script src="assets/scripts/libs/daterangepicker.custom.js"></script>
+	<script src="assets/scripts/libs/bootstrap-select.min.js"></script>
+	<script src="assets/scripts/libs/jquery-confirm.custome.js"></script>
+	<script src="assets/scripts/common.js"></script>
+	<!--[if lt IE 9]>
+		<script src="assets/scripts/libs/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="">
+
+	<aside class="layout-header-utils">
+		<button type="button" class="btn-menus">메뉴 on/off</button>
+	
+		<p class="location">
+			<a href="#">Node</a>
+			<a href="#">Nodes</a>
+			&nbsp;
+		</p>
+
+		<ul class="list-utils">
+			<li>
+				<a href="#" class="user">username.kim</a>
+			</li>
+			<li>
+				<select class="selectpicker">
+					<option data-icon="en" selected>ENGLISH</option>
+					<option data-icon="ko">KOREAN</option>
+					<option data-icon="zh">CHINESE</option>
+				</select>
+			</li>
+			<li>
+				<a href="#" class="help">HELP</a>
+			</li>
+			<li>
+				<button type="button" class="logout">LOGOUT</button>
+			</li>
+		</ul>
+	</aside>
+
+
+	<nav class="layout-sidemenu">
+		<a href="./intro.html" class="btn-nyx-logo">NYX</a>
+
+		<ul class="list-menus">
+			<li >
+				<a href="#" class="menu dashboard has-submenus">Dashboard</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./dashboard.html">Dashboard</a></li>
+					<li><a href="./realtime_event.html">Realtime Event</a></li>
+				</ul>
+			</li>
+			<li >
+				<a href="#" class="menu zoning has-submenus">Zoning</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./zones.html">Zones</a></li>
+					<li><a href="#notyet">Zone Registration</a></li>
+				</ul>
+			</li>
+			<li data-state="is-selected">
+				<a href="#" class="menu node has-submenus">Node</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./nodes.html">Nodes</a></li>
+					<li><a href="#notyet">Node Registration</a></li>
+				</ul>
+			</li>
+			<li >
+				<a href="#" class="menu analysis has-submenus">Analysis</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./analysis_alarms.html">Alarms</a></li>
+					<li><a href="./analysis_reports.html">Report</a></li>
+					<li><a href="./analysis_asset.html">Asset Management</a></li>
+				</ul>
+			</li>
+			<li >
+				<a href="./users.html" class="menu user">User</a>
+			</li>
+			<li >
+				<a href="#" class="menu preferences">Preferences</a>
+			</li>
+		</ul>
+
+
+		<!-- 임시 : 개발소스엔 추가하지 않습니다. -->
+		<ul class="events">
+			<li>
+				<button type="button" class="btn-trigger red-alert">알람 이벤트 발생</button>
+			</li>
+		</ul>
+		<script>
+		$(document).ready(function(e) {
+			$('.btn-trigger.red-alert').on('click', function(e) {
+				$('aside.event-alarm-container').attr('data-state', 'red-alert');
+
+				$('aside.event-alarm-container').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+					$(this).attr('data-state', '');
+				});
+			});
+		});	
+		</script>
+	</nav>
+
+
+
+	<main class="layout-contents">
+		<div class="layout-contents-inner">
+		
+			<section>
+				<header class="page-title">
+					<h1 class="title">Nodes</h1>
+					<p class="count">Total <mark class="node">25,486</mark></p>
+				</header>
+
+				<!--  검색 -->
+				<fieldset class="search-container">
+					<legend>search</legend>
+
+					<div class="right-content-view">
+						<!-- 데이터 리스트 페이지당 갯수 설정 -->
+						<label for="">List view</label>
+						<select name="" id="" class="select">
+							<option value="">15</option>
+						</select>
+
+					</div>
+					
+					<div class="left-content-view">
+						<select name="" id="" class="select">
+							<option value="">Node ID</option>
+							<option value="">Node Name</option>
+						</select>
+
+						<select name="" id="" class="select">
+							<option value="">Node Type All</option>
+						</select>
+
+						<input type="search" id="" name="" placeholder="Input Node ID" style="width: 232px;">
+						
+						<button type="submit" class="btn-submit search">SEARCH</button>
+					</div>
+				</fieldset>
+
+		
+				<table class="tbl-data-list">
+					<caption>data list</caption>
+					<colgroup>
+						<col style="width: 3%;">
+						<col style="width: 3%;">
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="c"><input type="checkbox" id="" name=""></th>
+							<th scope="col" class="c">NO</th>
+							<th scope="col">
+								Node ID
+								<button type="button" class="btn-sorting desc">sorting</button>
+							</th>
+							<th scope="col">
+								Zone ID
+								<button type="button" class="btn-sorting">sorting</button>
+							</th>
+							<th scope="col">
+								Node Status
+								<button type="button" class="btn-status-detail">view detail</button>
+							</th>
+							<th scope="col">
+								Node Type
+								<button type="button" class="btn-sorting">sorting</button>
+							</th>
+							<th scope="col">
+								Firmware Version
+							</th>
+							<th scope="col">Zone Replacement</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="c"><input type="checkbox" id="" name=""></td>
+							<td class="c">1</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_0001</td>
+							<td>
+								<em class="status-icon power txt-none" value="0.0"><span>POWER</span></em>
+								<em class="status-icon vibration txt-none" value="0"><span>VIBRATION</span></em>
+								<em class="status-icon als txt-none" value="6"><span>ALS</span></em>
+								<em class="status-icon dimming txt-none" value="10"><span>DIMMING</span></em>
+								<em class="status-icon decibel txt-none" value="0.0"><span>DECIBEL</span></em>
+								<em class="status-icon frequency txt-none" value="0"><span>FREQUENCY</span></em>
+							</td>
+							<td>Basic</td>
+							<td>0.0.1</td>
+							<td>2</td>
+						</tr>
+						<tr class="detail">
+							<td colspan="8">
+								<dl class="info">
+									<dt class="key">Node Diagnostics LED :</dt>
+									<dd class="value">Setup</dd>
+									<dt class="key">Node Operation Mode :</dt>
+									<dd class="value">Auto</dd>
+									<dt class="key">Dimming Mode :</dt>
+									<dd class="value">GPS/Time Table</dd>
+								</dl>
+ 
+ 								<dl class="info location">
+									<dt class="key">Latitude :</dt>
+									<dd class="value">1.3369309902191162</dd>
+									<dt class="key">Longitude :</dt>
+									<dd class="value">1.3369309902191162</dd>
+									<dt class="key">Altitude :</dt>
+									<dd class="value">-</dd>
+									<dt class="key">Satellite Received :</dt>
+									<dd class="value">-</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<td class="c"><input type="checkbox" id="" name=""></td>
+							<td class="c">1</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_0001</td>
+							<td>
+								<em class="status-icon power txt-none" value="0.0"><span>POWER</span></em>
+								<em class="status-icon vibration txt-none" value="0"><span>VIBRATION</span></em>
+								<em class="status-icon als txt-none" value="6"><span>ALS</span></em>
+								<em class="status-icon dimming txt-none" value="10"><span>DIMMING</span></em>
+								<em class="status-icon decibel txt-none" value="0.0"><span>DECIBEL</span></em>
+								<em class="status-icon frequency txt-none" value="0"><span>FREQUENCY</span></em>
+							</td>
+							<td>Basic</td>
+							<td>0.0.1</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td class="c"><input type="checkbox" id="" name=""></td>
+							<td class="c">1</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_0001</td>
+							<td>
+								<em class="status-icon power txt-none" value="0.0"><span>POWER</span></em>
+								<em class="status-icon vibration txt-none" value="0"><span>VIBRATION</span></em>
+								<em class="status-icon als txt-none" value="6"><span>ALS</span></em>
+								<em class="status-icon dimming txt-none" value="10"><span>DIMMING</span></em>
+								<em class="status-icon decibel txt-none" value="0.0"><span>DECIBEL</span></em>
+								<em class="status-icon frequency txt-none" value="0"><span>FREQUENCY</span></em>
+							</td>
+							<td>WIFI</td>
+							<td>0.0.1</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td class="c"><input type="checkbox" id="" name=""></td>
+							<td class="c">1</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_0001</td>
+							<td>
+								<em class="status-icon power txt-none" value="0.0"><span>POWER</span></em>
+								<em class="status-icon vibration txt-none" value="0"><span>VIBRATION</span></em>
+								<em class="status-icon als txt-none" value="6"><span>ALS</span></em>
+								<em class="status-icon dimming txt-none" value="10"><span>DIMMING</span></em>
+								<em class="status-icon decibel txt-none" value="0.0"><span>DECIBEL</span></em>
+								<em class="status-icon frequency txt-none" value="0"><span>FREQUENCY</span></em>
+							</td>
+							<td>WIFI + GPS</td>
+							<td>0.0.1</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td class="c"><input type="checkbox" id="" name=""></td>
+							<td class="c">1</td>
+							<td><a href="#">0001.00000001</a></td>
+							<td>G_0001</td>
+							<td>
+								<em class="status-icon power txt-none" value="0.0"><span>POWER</span></em>
+								<em class="status-icon vibration txt-none" value="0"><span>VIBRATION</span></em>
+								<em class="status-icon als txt-none" value="6"><span>ALS</span></em>
+								<em class="status-icon dimming txt-none" value="10"><span>DIMMING</span></em>
+								<em class="status-icon decibel txt-none" value="0.0"><span>DECIBEL</span></em>
+								<em class="status-icon frequency txt-none" value="0"><span>FREQUENCY</span></em>
+							</td>
+							<td>Basic</td>
+							<td>0.0.1</td>
+							<td>2</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="tbl-data-utils">
+					<div class="right-contents-view">
+						<!-- 데이터 리스트 - 하단 버튼들 -->
+						<p>
+							<a href="#" class="btn-normal">Delete</a>
+							<a href="#" class="btn-normal">Register</a>
+							<a href="#" class="btn-normal">Setup</a>
+							<a href="#" class="btn-normal">Import</a>
+							<a href="#" class="btn-action">Export</a>
+						</p>
+
+					</div>
+					
+					<div class="left-contents-view">
+						<!-- 데이터 리스트 네비게이션 -->
+						<div class="tbl-data-list-navigation">
+							<a href="#" class="btn first">처음으로</a>
+							<a href="#" class="btn prev">이전</a>
+							<a href="#" class="is-selected">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#" class="btn next">다음</a>
+							<a href="#" class="btn last">마지막으로</a>
+						</div>
+
+					</div>
+				</div>
+
+			</section>
+		</div>
+	</main>
+
+
+</body>
+</html>

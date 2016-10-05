@@ -34,7 +34,8 @@ var CommonMenus = (function ($) {
 	function initEvent() {
 		// toggle menu
 		$toggleMenus.on('click', function(e) {
-			$('body').attr('data-state', $('body').attr('data-state') == '' ? 'is-open' : '')
+			var state = $('body').attr('data-state');
+			$('body').attr('data-state', (state == '' || state == undefined) ? 'is-open' : '')
 		});
 
 		// side menu
@@ -76,6 +77,16 @@ var CommonMenus = (function ($) {
 
 
 $(document).ready(function(e) {
+	// jquery confirm default setting
+	jconfirm.defaults = {
+		title: '',
+		content: '',
+		theme: '',
+		animation: 'top',
+		closeAnimation: 'bottom',
+		backgroundDismiss: false,
+		closeIcon: true,
+	};	
 	// select box
 	$('.selectpicker').selectpicker();
 
