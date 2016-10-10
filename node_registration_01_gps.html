@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NYX</title> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="assets/styles/nyx.css">
+	<script src="assets/scripts/libs/jquery-2.2.3.min.js"></script>
+	<script src="assets/scripts/libs/bootstrap.min.js"></script>
+	<script src="assets/scripts/libs/moment.min.js"></script>
+	<script src="assets/scripts/libs/daterangepicker.custom.js"></script>
+	<script src="assets/scripts/libs/bootstrap-select.min.js"></script>
+	<script src="assets/scripts/libs/jquery-confirm.custom.js"></script>
+	<script src="assets/scripts/libs/jquery.magnific-popup.min.js"></script>
+	<script src="assets/scripts/libs/jquery.knob.min.js"></script>
+	<script src="assets/scripts/libs/tooltipster.bundle.min.js"></script>
+	<script src="assets/scripts/libs/jquery-clockpicker.min.js"></script>
+	<script src="assets/scripts/common.js"></script>
+	<!--[if lt IE 9]>
+		<script src="assets/scripts/libs/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body class="page-registration">
+
+	<aside class="layout-header-utils">
+		<button type="button" class="btn-menus">메뉴 on/off</button>
+	
+		<p class="location">
+			<a href="#">Node</a>
+			<a href="#">Node Registration</a>
+			&nbsp;
+		</p>
+
+		<ul class="list-utils">
+			<li>
+				<a href="#" class="user">username.kim</a>
+			</li>
+			<li>
+				<select class="selectpicker">
+					<option data-icon="en" selected>ENGLISH</option>
+					<option data-icon="ko">KOREAN</option>
+					<option data-icon="zh">CHINESE</option>
+				</select>
+			</li>
+			<li>
+				<a href="#" class="help">HELP</a>
+			</li>
+			<li>
+				<button type="button" class="logout">LOGOUT</button>
+			</li>
+		</ul>
+	</aside>
+
+
+	<nav class="layout-sidemenu">
+		<a href="./intro.html" class="btn-nyx-logo">NYX</a>
+
+		<ul class="list-menus">
+			<li >
+				<a href="#" class="menu dashboard has-submenus">Dashboard</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./dashboard.html">Dashboard</a></li>
+					<li><a href="./realtime_event.html">Realtime Event</a></li>
+				</ul>
+			</li>
+			<li >
+				<a href="#" class="menu zoning has-submenus">Zoning</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./zones.html">Zones</a></li>
+					<li><a href="./zone_registration_01.html">Zone Registration</a></li>
+				</ul>
+			</li>
+			<li data-state="is-selected">
+				<a href="#" class="menu node has-submenus">Node</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./nodes.html">Nodes</a></li>
+					<li><a href="./node_registration_01_als.html">Node Registration</a></li>
+				</ul>
+			</li>
+			<li >
+				<a href="#" class="menu analysis has-submenus">Analysis</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./analysis_alarms.html">Alarms</a></li>
+					<li><a href="./analysis_reports.html">Report</a></li>
+					<li><a href="./analysis_asset.html">Asset Management</a></li>
+				</ul>
+			</li>
+			<li >
+				<a href="./users.html" class="menu user">User</a>
+			</li>
+			<li >
+				<a href="#" class="menu preferences">Preferences</a>
+			</li>
+		</ul>
+
+
+		<!-- 임시 : 개발소스엔 추가하지 않습니다. -->
+		<ul class="event-trigger">
+			<li>
+				<button type="button" class="btn-trigger red-alert">알람 이벤트 발생</button>
+			</li>
+		</ul>
+		<script>
+		$(document).ready(function(e) {
+			$('.btn-trigger.red-alert').on('click', function(e) {
+				$('aside.event-alarm-container').attr('data-state', 'red-alert');
+
+				$('aside.event-alarm-container').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+					$(this).attr('data-state', '');
+				});
+			});
+		});	
+		</script>
+	</nav>
+
+
+	<main class="layout-contents">
+		<div class="layout-contents-inner">
+		
+			<div class="column left">
+				<div class="inner">
+					
+					<!-- map -->
+					<div class="map-container">
+						map
+					</div>
+
+				</div>					
+			</div>
+
+
+			<div class="column right">
+				<div class="inner">
+
+
+					<!-- registration -->
+					<section class="layout-forms">
+						<header class="layout-forms-title">
+							<h1 class="title">Node Registration</h1>
+						</header>
+
+						<fieldset class="layout-forms-contents">
+							<legend>Node Registration Forms</legend>
+
+							<!-- registration tab -->
+							<div class="tabs">
+								<a href="./node_registration_01_als.html" class="is-selected">Node</a>
+								<a href="./node_registration_02_noise.html" >Noise</a>
+								<a href="./node_registration_03_vibration.html" >Vibration</a>
+								<a href="./node_registration_04_diagnostics.html" >Node Diagnostics</a>
+								<a href="./node_registration_05_server.html" >Server</a>
+							</div>
+
+
+							<div class="registration-detail">
+								
+								<!-- node -->
+								<fieldset class="section node">
+									<legend>Node</legend>
+
+									<table class="tbl-setting-forms">
+										<caption></caption>
+										<colgroup>
+											<col style="width: 136px;">
+											<col style="width: auto;">
+											<col style="width: 136px;">
+											<col style="width: auto;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th><label for="">Node ID</label></th>
+												<td colspan="3">
+													<input type="text" id="" name="" style="width: 140px;">
+												</td>
+											</tr>
+											<tr>
+												<th><label for="">Zone Selct</label></th>
+												<td>
+													<select name="" id="" class="select" style="width: 140px;">
+														<option value="">G_0001</option>
+													</select>
+												</td>
+												<th><label for="">Node Type</label></th>
+												<td>
+													<select name="" id="" class="select" style="width: 100px;">
+														<option value="">Basic</option>
+													</select>
+													<button type="button" class="btn-tooltip" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do">도움말</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</fieldset>
+
+
+								<!-- lamp on/off control -->
+								<fieldset class="section">
+									<legend>Lamp On/Off Control</legend>
+
+									<p class="select-lamp">
+										<input type="radio" id="als" name="lamp" class="radio">
+										<label for="als">Ambient Light Sensor</label>
+										<input type="radio" id="gps" name="lamp" class="radio" checked>
+										<label for="gps">GPS/Time Table</label>
+									</p>
+
+									<h2 class="sub-title">Lamp On/Off Control</h2>
+
+
+									<table class="tbl-setting-forms">
+										<caption></caption>
+										<colgroup>
+											<col style="width: 136px;">
+											<col style="width: auto;">
+											<col style="width: 136px;">
+											<col style="width: auto;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th><label for="">Day Interval</label></th>
+												<td>
+													<select name="" id="" class="select" style="width: 100px;">
+														<option value="">90</option>
+													</select>
+													sec
+												</td>
+												<th><label for="">Dimming Level</label></th>
+												<td>
+													<select name="" id="" class="select" style="width: 100px;">
+														<option value="">80</option>
+													</select>
+													%
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<table class="tbl-time-setup">
+										<caption></caption>
+										<colgroup>
+											<col style="width: 136px;">
+											<col style="width: auto;">
+											<col style="width: auto;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>
+													<em class="time-setup">Time Setup</em>
+												</th>
+												<th>
+													<em class="icon sunrise">SUNRISE</em>
+												</th>
+												<th>
+													<em class="icon sunset">SUNSET</em>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th><label for="">1 Week</label></th>
+												<td>
+													<span class="clockpicker"><input type="text" value="" placeholder="07:10"></span>
+												</td>
+												<td>
+													<span class="clockpicker"><input type="text" value="" placeholder="07:10"></span>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="">2 Week</label></th>
+												<td>
+													<span class="clockpicker"><input type="text" value="" placeholder="07:10"></span>
+												</td>
+												<td>
+													<span class="clockpicker"><input type="text" value="" placeholder="07:10"></span>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="">3 Week</label></th>
+												<td>
+													<span class="clockpicker"><input type="text" value="" placeholder="07:10"></span>
+												</td>
+												<td>
+													<span class="clockpicker"><input type="text" value="" placeholder="07:10"></span>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="">4 Week</label></th>
+												<td>
+													<span class="clockpicker"><input type="text" value="" placeholder="07:10"></span>
+												</td>
+												<td>
+													<span class="clockpicker"><input type="text" value="" placeholder="07:10"></span>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="">5 Week</label></th>
+												<td>
+													<span class="clockpicker"><input type="text" value="" placeholder="07:10"></span>
+												</td>
+												<td>
+													<span class="clockpicker"><input type="text" value="" placeholder="07:10"></span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</fieldset>
+
+							</div>	<!-- class="registration-detail" -->
+
+							<div class="layout-forms-footer">
+								<p class="btns">
+									<a href="#" class="btn-normal">Cancel</a>
+									<a href="#" class="btn-action">Save</a>
+								</p>
+							</div>
+						</fieldset>
+					</section>
+
+					
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+
+</body>
+</html>

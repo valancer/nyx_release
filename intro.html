@@ -11,7 +11,11 @@
 	<script src="assets/scripts/libs/moment.min.js"></script>
 	<script src="assets/scripts/libs/daterangepicker.custom.js"></script>
 	<script src="assets/scripts/libs/bootstrap-select.min.js"></script>
-	<script src="assets/scripts/libs/jquery-confirm.custome.js"></script>
+	<script src="assets/scripts/libs/jquery-confirm.custom.js"></script>
+	<script src="assets/scripts/libs/jquery.magnific-popup.min.js"></script>
+	<script src="assets/scripts/libs/jquery.knob.min.js"></script>
+	<script src="assets/scripts/libs/tooltipster.bundle.min.js"></script>
+	<script src="assets/scripts/libs/jquery-clockpicker.min.js"></script>
 	<script src="assets/scripts/common.js"></script>
 	<!--[if lt IE 9]>
 		<script src="assets/scripts/libs/html5shiv.min.js"></script>
@@ -67,7 +71,7 @@
 
 				<ul class="list-sub-menus">
 					<li><a href="./zones.html">Zones</a></li>
-					<li><a href="#notyet">Zone Registration</a></li>
+					<li><a href="./zone_registration_01.html">Zone Registration</a></li>
 				</ul>
 			</li>
 			<li >
@@ -75,7 +79,7 @@
 
 				<ul class="list-sub-menus">
 					<li><a href="./nodes.html">Nodes</a></li>
-					<li><a href="#notyet">Node Registration</a></li>
+					<li><a href="./node_registration_01_als.html">Node Registration</a></li>
 				</ul>
 			</li>
 			<li >
@@ -97,7 +101,7 @@
 
 
 		<!-- 임시 : 개발소스엔 추가하지 않습니다. -->
-		<ul class="events">
+		<ul class="event-trigger">
 			<li>
 				<button type="button" class="btn-trigger red-alert">알람 이벤트 발생</button>
 			</li>
@@ -116,7 +120,6 @@
 	</nav>
 
 
-
 	<main>
 		<div class="layout-contents">
 			
@@ -125,72 +128,78 @@
 				
 				<ul class="grid-intro">
 					<li>
-						<div class="grid-intro-item dashboard">
+						<a href="#" class="grid-intro-item dashboard">
+							<input type="radio" id="" name="">
 							<h2 class="title">Dashboard</h2>
 							<p class="desc">
 								<strong>NYX</strong>
 							</p>
-
+<!--
 							<div class="buttons">
 								<a href="#" class="btns btn-save">Save to INTRO</a>
 								<a href="#" class="btns btn-go">Go</a>
 							</div>
-						</div>
+-->
+						</a>
 					</li>
 					<li>
-						<div class="grid-intro-item event-alarm">
+						<a href="#" class="grid-intro-item event-alarm">
 							<h2 class="title">New Event Alarm</h2>
 							<p class="desc">
 								<strong>126</strong>
 							</p>
-
+<!--
 							<div class="buttons">
 								<a href="#" class="btns btn-save">Save to INTRO</a>
 								<a href="#" class="btns btn-go">Go</a>
 							</div>
-						</div>
+-->
+						</a>
 					</li>
 					<li>
-						<div class="grid-intro-item node">
+						<a href="#" class="grid-intro-item node">
 							<h2 class="title"><span>Total</span> Node</h2>
 							<p class="desc">
 								<strong>126,486</strong>
 							</p>
-
+<!--
 							<div class="buttons">
 								<a href="#" class="btns btn-save">Save to INTRO</a>
 								<a href="#" class="btns btn-go">Go</a>
 							</div>
-						</div>
+-->
+						</a>
 					</li>
 					<li>
-						<div class="grid-intro-item zone">
+						<a href="#" class="grid-intro-item zone">
 							<h2 class="title"><span>Total</span> Zone</h2>
 							<p class="desc">
 								<strong>3,689</strong>
 							</p>
-
+<!--
 							<div class="buttons">
 								<a href="#" class="btns btn-save">Save to INTRO</a>
 								<a href="#" class="btns btn-go">Go</a>
 							</div>
-						</div>
+-->
+						</a>
 					</li>
 					<li class="empahsis combine line-break">
-						<div class="grid-intro-item anr">
+						<a href="#" class="grid-intro-item anr">
 							<h2 class="title">Analysis and Report</h2>
 							<p class="desc">
 								Income form Node &amp; Zone
 							</p>
-
+<!--
 							<div class="buttons">
 								<a href="#" class="btns btn-save">Save to INTRO</a>
 								<a href="#" class="btns btn-go">Go</a>
 							</div>
-						</div>
+-->
+						</a>
 					</li>
 					<li class="empahsis">
-						<div class="grid-intro-item fault-event">
+						<a href="#" class="grid-intro-item fault-event">
 							<p class="desc">
 								<strong>87</strong>
 							</p>
@@ -199,15 +208,16 @@
 							<p class="desc">
 								We detect the error
 							</p>
-
+<!--
 							<div class="buttons">
 								<a href="#" class="btns btn-save">Save to INTRO</a>
 								<a href="#" class="btns btn-go">Go</a>
 							</div>
-						</div>
+-->
+						</a>
 					</li>
 					<li class="empahsis">
-						<div class="grid-intro-item save-energy">
+						<a href="#" class="grid-intro-item save-energy">
 							<p class="desc">
 								<strong>25.2%</strong>
 							</p>
@@ -216,64 +226,69 @@
 							<p class="desc">
 								Monthly income
 							</p>
-
+<!--
 							<div class="buttons">
 								<a href="#" class="btns btn-save">Save to INTRO</a>
 								<a href="#" class="btns btn-go">Go</a>
 							</div>
-						</div>
+-->
+						</a>
 					</li>
 					<li class="line-break">
-						<div class="grid-intro-item users">
+						<a href="#" class="grid-intro-item users">
 							<h2 class="title">Users</h2>
 							<p class="desc">
 								<strong>10</strong>
 							</p>
-
+<!--
 							<div class="buttons">
 								<a href="#" class="btns btn-save">Save to INTRO</a>
 								<a href="#" class="btns btn-go">Go</a>
 							</div>
-						</div>
+-->
+						</a>
 					</li>
 					<li>
-						<div class="grid-intro-item preferences">
+						<a href="#" class="grid-intro-item preferences">
 							<h2 class="title">Preferences</h2>
 							<p class="desc">
 								Personalized<br>smart environments
 							</p>
-
+<!--
 							<div class="buttons">
 								<a href="#" class="btns btn-save">Save to INTRO</a>
 								<a href="#" class="btns btn-go">Go</a>
 							</div>
-						</div>
+-->
+						</a>
 					</li>
 					<li>
-						<div class="grid-intro-item widget01">
+						<a href="#" class="grid-intro-item widget01">
 							<h2 class="title">Widget Name</h2>
 							<p class="desc">
 								<strong>124</strong>
 							</p>
-
+<!--
 							<div class="buttons">
 								<a href="#" class="btns btn-save">Save to INTRO</a>
 								<a href="#" class="btns btn-go">Go</a>
 							</div>
-						</div>
+-->
+						</a>
 					</li>
 					<li>
-						<div class="grid-intro-item widget02">
+						<a href="#" class="grid-intro-item widget02">
 							<h2 class="title">Widget Name</h2>
 							<p class="desc">
 								Description
 							</p>
-
+<!--
 							<div class="buttons">
 								<a href="#" class="btns btn-save">Save to INTRO</a>
 								<a href="#" class="btns btn-go">Go</a>
 							</div>
-						</div>
+-->
+						</a>
 					</li>
 				</ul>
 

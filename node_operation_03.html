@@ -22,7 +22,7 @@
 	<![endif]-->
 </head>
 
-<body>
+<body class="filelist">
 
 	<aside class="layout-header-utils">
 		<button type="button" class="btn-menus">메뉴 on/off</button>
@@ -122,145 +122,129 @@
 
 	<main>
 		<div class="layout-contents">
-		<style>
-			h1, h2 { font-weight: 700; color: #fff;  }
-			a { color: rgba(255, 255, 255, 0.6); }
-		</style>
 			
-
-			<h1>FILELIST</h1>
-			<ul>
-				<li><a href="./login.html">login.html</a></li>
-				<li><a href="./intro.html">intro.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>DASHBOARD</h2>
-			<ul>
-				<li><a href="./dashboard.html">dashboard.html</a></li>
-				<li><a href="./realtime_event.html">realtime_event.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>ZONING</h2>
-			<ul>
-				<li><a href="./zones.html">zones.html</a></li>
-				<li><a href="./zone_registration_01.html">Zone Registration - Zone</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Node</h2>
-			<ul>
-				<li><a href="./nodes.html">nodes.html</a></li>
-				<li><a href="./node_operation_01.html">node operation - dimming level</a></li>
-				<li><a href="./node_operation_02.html">node operation - dimming Blink</a></li>
-				<li><a href="./node_operation_03.html">node operation - Node Diagnostics LED</a></li>
-				<li><a href="./node_registration_01_als.html">Node Registration - Node(ALS)</a></li>
-				<li><a href="./node_registration_01_gps.html">Node Registration - Node(GPS/Time Table)</a></li>
-				<li><a href="./node_registration_02_noise.html">Node Registration - Noise</a></li>
-				<li><a href="./node_registration_03_vibration.html">Node Registration - Vibration</a></li>
-				<li><a href="./node_registration_04_diagnotics.html">Node Registration - Node Diagnotics</a></li>
-				<li><a href="./node_registration_05_server.html">Node Registration - Server</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Analysis</h2>
-			<ul>
-				<li><a href="./analysis_alarms.html">alarms.html</a></li>
-				<li><a href="./analysis_reports.html">reports.html</a></li>
-				<li><a href="./analysis_asset.html">asset_management.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Users</h2>
-			<ul>
-				<li><a href="./users.html">users.html</a></li>
-				<li><a href="./users_registration.html">users_registration.html</a></li>
-			</ul>
-
-			<br>
-
-			<h2>Modal Message</h2>
-			<ul>
-				<li><a href="#" class="btn-alert-nagative">부정의 메시지</a></li>
-				<li><a href="#" class="btn-confirm">질의, 알림, 확인인 경우</a></li>
-				<li><a href="#" class="btn-alert-error">오류 메시지</a></li>
-				<li><a href="#" class="btn-alert">피드백, 성공의 메시지인 경우</a></li>
-			</ul>
-
-
+			<a href="#test-noc-03" class="btn-dimming-level">node operation - Node Diagnostics LED</a>
+			
 			<script>
 			$(document).ready(function(e) {
-				// 부정의 메시지
-				$('.btn-alert-nagative').on('click', function(e) {
-					e.preventDefault();
-
-					$.alert({
-						icon: 'alert-nagative',
-						content: '이미 등록된 아이디 입니다.<br>다시 입력해주세요.',
-						confirmButton: 'Cancel',
-						confirm: function(){
-							console.log('cancel');
-						}
-    				});
-				});
-
-				// 질의, 알림, 확인인 경우
-				$('.btn-confirm').on('click', function(e) {
-					e.preventDefault();
-
-					$.confirm({
-						icon: 'confirm',
-						content: '존에 포함된 모든 정보가 삭제됩니다.<br>정말 삭제하시겠습니까?',
-						confirmButton: 'OK',
-						cancelButton: 'Cancel',
-						cancel: function(){
-							console.log('cancel');
-						},
-						confirm: function(){
-							console.log('ok');
-						}
-    				});
-				});
-
-				// 오류 메시지
-				$('.btn-alert-error').on('click', function(e) {
-					e.preventDefault();
-
-					$.alert({
-						icon: 'alert-error',
-						content: '오류입니다. 다시 입력해주세요.',
-						confirmButton: 'Cancel',
-						confirm: function(){
-							console.log('cancel');
-						}
-    				});
-				});
-
-				// 피드백, 성공의 메시지인 경우
-				$('.btn-alert').on('click', function(e) {
-					e.preventDefault();
-
-					$.alert({
-						icon: 'alert',
-						content: 'NYX 등록을 신청했습니다.',
-						confirmButton: 'Cancel',
-						confirm: function(){
-							console.log('cancel');
-						}
-    				});
-				});
+				$('.btn-dimming-level').magnificPopup({});
 			});
 			</script>
 
+			<aside id="test-noc-03" class="layout-popup node-operation-control mfp-hide" style="width: 628px;">
+				<header class="layout-popup-title node">
+					<button type="button" class="btn-close mfp-close">close</button>
+					<h2 class="title"><small>Node ID :</small> 0000.0000.0000.1</h2>
+				</header>
+
+				<fieldset class="layout-popup-contents">
+					<legend>Node Operation Control</legend>
+
+					<!-- auto / manual -->
+					<div class="mode-select">
+						<input type="checkbox" id="toggle-am" name="mode-change">
+						<div class="am-toggle">
+							<label for="toggle-am"><i></i></label>
+						</div>
+						<label for="toggle-am" class="am-toggle-label">
+							<span class="auto">Auto (Sensor-based) Mode</span>
+							<span class="manual">Manual Mode</span>
+						</label>
+		
+						<button type="button" class="btn-small">Node Reset</button>
+					</div>
+
+
+					<!-- category -->
+					<div class="tabs">
+						<a href="#">Dimming Level</a>
+						<a href="#">Dimming Blink</a>
+						<a href="#" class="is-selected">Node Diagnostics LED</a>
+					</div>
+
+
+					<!-- Node Diagnostics LED -->
+					<fieldset data-state="" class="noc-detail node-diagnostics-led">
+						<legend>Node Diagnostics LED</legend>
+
+						<div class="view left">
+
+							<div class="diagnostics-switch">
+								<label for="diagnostics" class="switch-toggle-label">Diagnostics LED</label>
+								<div class="on-off-switch">
+									<input type="checkbox" id="diagnostics" name="diagnostics" checked>
+									<div class="switch-toggle">
+										<label for="diagnostics"><i></i></label>
+									</div>
+								</div>
+							</div>
+
+
+							<div data-state="customize" class="visual-status">
+								<i class="bulb"></i>
+								<p class="description">Diagnostics LED<br>Blink Count</p>
+								<strong class="value">0</strong>
+							</div>
+						</div>
+
+						<div class="view right">
+							<div class="drag-customize">
+								<input class="drag-control" data-height="150" data-width="150" data-angleOffset="-125" data-angleArc="250" data-bgColor="#fff" value="5">
+								<p class="description">Blink Count</p>
+							</div>
+
+							<p class="interval">
+								<label for="" class="default">
+									Interval
+									<select name="" id="" class="select">
+										<option value="">1</option>
+										<option value="">2</option>
+										<option value="">3</option>
+										<option value="">4</option>
+										<option value="">5</option>
+									</select>
+									sec
+								</label>
+							</p>
+						</div>
+					</fieldset>
+
+
+					<div class="layout-popup-footer">
+						<p class="btns">
+							<a href="#" class="btn-normal">Cancel</a>
+							<a href="#" class="btn-action">Save</a>
+						</p>
+					</div>
+				</fieldset>
+
+			</aside>
+			<script>
+			$(document).ready(function(e) {
+				var $nocDetail = $('.noc-detail');
+
+				var isManual = $('input[name=mode-change]').is(':checked');
+
+				// Dimming Level
+				NodeOperationControl.init(2, isManual);
+
+				$('input[name=mode-change]').on('click', function(e) {
+					var isManual = $(this).is(':checked');
+
+					if( isManual ) {
+						$nocDetail.attr("data-state", "manual");
+					} else {
+						$nocDetail.attr("data-state", "auto");
+					}
+
+					NodeOperationControl.updateMode(isManual);
+				});
+			});	
+			</script>
 
 		</div>
 	</main>
+
 
 </body>
 </html>
