@@ -16,6 +16,8 @@
 	<script src="assets/scripts/libs/jquery.knob.min.js"></script>
 	<script src="assets/scripts/libs/tooltipster.bundle.min.js"></script>
 	<script src="assets/scripts/libs/jquery-clockpicker.min.js"></script>
+	<script src="assets/scripts/libs/odometer.min.js"></script>
+	<script src="assets/scripts/libs/jquery.cookie.js"></script>
 	<script src="assets/scripts/common.js"></script>
 	<!--[if lt IE 9]>
 		<script src="assets/scripts/libs/html5shiv.min.js"></script>
@@ -95,7 +97,7 @@
 				<a href="./users.html" class="menu user">User</a>
 			</li>
 			<li >
-				<a href="#" class="menu preferences">Preferences</a>
+				<a href="./preferences.html" class="menu preferences">Preferences</a>
 			</li>
 		</ul>
 
@@ -105,9 +107,16 @@
 			<li>
 				<button type="button" class="btn-trigger red-alert">알람 이벤트 발생</button>
 			</li>
+			<li>
+				<button type="button" class="btn-trigger themes" data-theme="">테마 디폴트</button>
+			</li>
+			<li>
+				<button type="button" class="btn-trigger themes" data-theme="green">테마 그린</button>
+			</li>
 		</ul>
 		<script>
 		$(document).ready(function(e) {
+			// event alarm
 			$('.btn-trigger.red-alert').on('click', function(e) {
 				$('aside.event-alarm-container').attr('data-state', 'red-alert');
 
@@ -115,6 +124,15 @@
 					$(this).attr('data-state', '');
 				});
 			});
+
+			// theme green
+			$('.btn-trigger.themes').on('click', function(e) {
+				var theme = $(this).attr('data-theme');
+				$('html').attr('data-theme', theme);
+
+				$.cookie('theme', theme);
+			});
+
 		});	
 		</script>
 	</nav>
@@ -126,7 +144,7 @@
 			<section>
 				<header class="page-title">
 					<h1 class="title">Reports</h1>
-					<p class="count">Total <mark>836</mark></p>
+					<p class="count">Total <mark class="report">836</mark></p>
 				</header>
 
 				<!--  검색 -->

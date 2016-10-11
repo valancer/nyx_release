@@ -16,6 +16,8 @@
 	<script src="assets/scripts/libs/jquery.knob.min.js"></script>
 	<script src="assets/scripts/libs/tooltipster.bundle.min.js"></script>
 	<script src="assets/scripts/libs/jquery-clockpicker.min.js"></script>
+	<script src="assets/scripts/libs/odometer.min.js"></script>
+	<script src="assets/scripts/libs/jquery.cookie.js"></script>
 	<script src="assets/scripts/common.js"></script>
 	<!--[if lt IE 9]>
 		<script src="assets/scripts/libs/html5shiv.min.js"></script>
@@ -95,7 +97,7 @@
 				<a href="./users.html" class="menu user">User</a>
 			</li>
 			<li >
-				<a href="#" class="menu preferences">Preferences</a>
+				<a href="./preferences.html" class="menu preferences">Preferences</a>
 			</li>
 		</ul>
 
@@ -105,9 +107,16 @@
 			<li>
 				<button type="button" class="btn-trigger red-alert">알람 이벤트 발생</button>
 			</li>
+			<li>
+				<button type="button" class="btn-trigger themes" data-theme="">테마 디폴트</button>
+			</li>
+			<li>
+				<button type="button" class="btn-trigger themes" data-theme="green">테마 그린</button>
+			</li>
 		</ul>
 		<script>
 		$(document).ready(function(e) {
+			// event alarm
 			$('.btn-trigger.red-alert').on('click', function(e) {
 				$('aside.event-alarm-container').attr('data-state', 'red-alert');
 
@@ -115,6 +124,15 @@
 					$(this).attr('data-state', '');
 				});
 			});
+
+			// theme green
+			$('.btn-trigger.themes').on('click', function(e) {
+				var theme = $(this).attr('data-theme');
+				$('html').attr('data-theme', theme);
+
+				$.cookie('theme', theme);
+			});
+
 		});	
 		</script>
 	</nav>
@@ -149,6 +167,12 @@
 								</td>
 							</tr>
 							<tr>
+								<th><label for="">User ID</label></th>
+								<td>
+									<input type="text" id="" name="" placeholder="Enter your ID">
+								</td>
+							</tr>
+							<tr>
 								<th><label for="">Name</label></th>
 								<td>
 									<input type="text" id="" name="" placeholder="Enter your name">
@@ -174,6 +198,73 @@
 									</select>
 								</td>
 							</tr>
+							<tr>
+								<th class="vtop"><label for="">Zone</label></th>
+								<td>
+								
+
+									<table class="tbl-multiple-select">
+										<caption></caption>
+										<colgroup>
+											<col>
+											<col style="width: 132px;">
+											<col>
+										</colgroup>
+										<thead>
+											<tr>
+												<th>Zones</th>
+												<th></th>
+												<th>Selected Zones</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<input type="text" id="" name="" placeholder="search">
+												</td>
+												<td></td>
+												<td>
+													<input type="text" id="" name="" placeholder="search">
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<select name="" id="" size="9" class="select" multiple>
+														<option value="">0001.00000005</option>
+														<option value="">0001.00000006</option>
+														<option value="">0001.00000007</option>
+														<option value="">0001.00000008</option>
+														<option value="">0001.00000009</option>
+														<option value="">0001.00000010</option>
+														<option value="">0001.00000011</option>
+														<option value="">0001.00000012</option>
+														<option value="">0001.00000009</option>
+														<option value="">0001.00000010</option>
+														<option value="">0001.00000011</option>
+														<option value="">0001.00000012</option>
+													</select>
+												</td>
+												<td>
+													<button type="button" class="btn-select-multiple btn-add">추가</button>
+													<button type="button" class="btn-select-multiple btn-all-add">전체추가</button>
+													<button type="button" class="btn-select-multiple btn-delete">삭제</button>
+													<button type="button" class="btn-select-multiple btn-all-delete">전체삭제</button>
+												</td>
+												<td>
+													<select name="" id="" size="9" class="select" multiple>
+														<option value="">0001.00000001</option>
+														<option value="">0001.00000002</option>
+														<option value="">0001.00000003</option>
+														<option value="">0001.00000004</option>
+													</select>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+
+								</td>
+							</tr>
 						</tbody>
 					</table>
 				</fieldset>		
@@ -182,26 +273,12 @@
 					<div class="right-contents-view">
 						<!-- 데이터 리스트 - 하단 버튼들 -->
 						<p>
-							<a href="#" class="btn-normal">Delete</a>
+							<a href="#" class="btn-normal">Cancel</a>
 							<a href="#" class="btn-action">Register</a>
 						</p>
 					</div>
 					
 					<div class="left-contents-view">
-						<!-- 데이터 리스트 네비게이션 -->
-						<div class="tbl-data-list-navigation">
-							<a href="#" class="btn first">처음으로</a>
-							<a href="#" class="btn prev">이전</a>
-							<a href="#" class="is-selected">1</a>
-							<a href="#">2</a>
-							<a href="#">3</a>
-							<a href="#">4</a>
-							<a href="#">5</a>
-							<a href="#">6</a>
-							<a href="#" class="btn next">다음</a>
-							<a href="#" class="btn last">마지막으로</a>
-						</div>
-
 					</div>
 				</div>
 

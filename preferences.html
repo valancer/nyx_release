@@ -30,7 +30,7 @@
 		<button type="button" class="btn-menus">메뉴 on/off</button>
 	
 		<p class="location">
-			<a href="#">Users</a>
+			<a href="#">Preferences</a>
 			
 			&nbsp;
 		</p>
@@ -96,7 +96,7 @@
 			<li >
 				<a href="./users.html" class="menu user">User</a>
 			</li>
-			<li >
+			<li data-state="is-selected">
 				<a href="./preferences.html" class="menu preferences">Preferences</a>
 			</li>
 		</ul>
@@ -143,126 +143,123 @@
 		
 			<section>
 				<header class="page-title">
-					<h1 class="title">Users</h1>
-					<p class="count">Total <mark class="user">836</mark></p>
+					<h1 class="title">Preferences</h1>
 				</header>
 
-				<!--  검색 -->
-				<fieldset class="search-container only-list-count">
-					<legend>search</legend>
 
-					<div class="right-content-view">
-						<!-- 데이터 리스트 페이지당 갯수 설정 -->
-						<label for="">List view</label>
-						<select name="" id="" class="select">
-							<option value="">15</option>
-						</select>
+				<fieldset class="forms">
+					<legend>Preferences Form</legend>
 
-					</div>
-					
-					<div class="left-content-view">
-					</div>
-				</fieldset>
+					<table class="tbl-data-forms">
+						<caption></caption>
+						<colgroup>
+							<col style="width: 154px;">
+							<col>
+							<col>
+							<col>
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><label for="">Title</label></th>
+								<td colspan="2">
+									<p class="with-button">
+										<input type="text" id="" name="" placeholder="placeholder">
+									</p>	
+									<button type="button" class="btn-inner-form">Button name</button>
+								</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th><label for="">Title</label></th>
+								<td colspan="2">
+									<input type="text" id="" name="" placeholder="placeholder">
+								</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th><label for="">Title</label></th>
+								<td colspan="2">
+									<input type="checkbox" id="checkbox01" name="checkboxs" class="checkbox">
+									<label for="checkbox01">options name</label>
+									<input type="checkbox" id="checkbox02" name="checkboxs" class="checkbox">
+									<label for="checkbox02">options name</label>
+								</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th><label for="">Title</label></th>
+								<td colspan="2">
+									<select name="" id="" class="select">
+										<option value="">Select</option>
+									</select>
+								</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th><label for="">Title</label></th>
+								<td colspan="2">
+									<input type="radio" id="radio01" name="radios" class="radio">
+									<label for="radio01">options name</label>
+									<input type="radio" id="radio02" name="radios" class="radio">
+									<label for="radio02">options name</label>
+								</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th class="vtop"><label for="">Theme</label></th>
+								<td>
+									<div class="theme">
+										<input type="radio" id="default" name="themes" class="radio">
+										<label for="default">Default</label>
+										<div class="thumb"><img src="assets/images/theme01.jpg" alt=""></div>
+										<a href="#" target="_blank" class="btn-preview">Preview</a>
+									</div>
+								</td>
+								<td>
+									<div class="theme">
+										<input type="radio" id="green" name="themes" class="radio">
+										<label for="green">Green</label>
+										<div class="thumb"><img src="assets/images/theme02.jpg" alt=""></div>
+										<a href="#" target="_blank" class="btn-preview">Preview</a>
+									</div>
+								</td>
+								<td>
+									<div class="theme">
+										<input type="radio" id="lightgray" name="themes" class="radio">
+										<label for="lightgray">Light Gray</label>
+										<div class="thumb"><img src="assets/images/theme03.jpg" alt=""></div>
+										<a href="#" target="_blank" class="btn-preview">Preview</a>
+									</div>
+								</td>
+								<td>
+									<div class="theme">
+										<input type="radio" id="bluegreen" name="themes" class="radio">
+										<label for="bluegreen">Blue Green</label>
+										<div class="thumb"><img src="assets/images/theme04.jpg" alt=""></div>
+										<a href="#" target="_blank" class="btn-preview">Preview</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>		
 
-		
-				<table class="tbl-data-list">
-					<caption>data list</caption>
-					<colgroup>
-						<col style="width: 3%;">
-						<col>
-						<col>
-						<col>
-						<col>
-					</colgroup>
-					<thead>
-						<tr>
-							<th scope="col" class="c"><input type="checkbox" id="" name=""></th>
-							<th scope="col">
-								User ID
-							</th>
-							<th scope="col">
-								Name
-							</th>
-							<th scope="col">
-								Last Login Date
-							</th>
-							<th scope="col">
-								Role
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="c"><input type="checkbox" id="" name=""></td>
-							<td><a href="#">adminnyx</a></td>
-							<td>soonshinlee</td>
-							<td>
-								<time datetime="2016-08-25 52:27:19">2016-08-25 52:27:19</time>
-							</td>
-							<td>Gtoup Manager</td>
-						</tr>
-						<tr>
-							<td class="c"><input type="checkbox" id="" name=""></td>
-							<td><a href="#">adminnyx</a></td>
-							<td>soonshinlee</td>
-							<td>
-								<time datetime="2016-08-25 52:27:19">2016-08-25 52:27:19</time>
-							</td>
-							<td>Gtoup Manager</td>
-						</tr>
-						<tr>
-							<td class="c"><input type="checkbox" id="" name=""></td>
-							<td><a href="#">adminnyx</a></td>
-							<td>soonshinlee</td>
-							<td>
-								<time datetime="2016-08-25 52:27:19">2016-08-25 52:27:19</time>
-							</td>
-							<td>Gtoup Manager</td>
-						</tr>
-						<tr>
-							<td class="c"><input type="checkbox" id="" name=""></td>
-							<td><a href="#">adminnyx</a></td>
-							<td>soonshinlee</td>
-							<td>
-								<time datetime="2016-08-25 52:27:19">2016-08-25 52:27:19</time>
-							</td>
-							<td>Gtoup Manager</td>
-						</tr>
-						<tr>
-							<td class="c"><input type="checkbox" id="" name=""></td>
-							<td><a href="#">adminnyx</a></td>
-							<td>soonshinlee</td>
-							<td>
-								<time datetime="2016-08-25 52:27:19">2016-08-25 52:27:19</time>
-							</td>
-							<td>Gtoup Manager</td>
-						</tr>
-					</tbody>
-				</table>
 				<div class="tbl-data-utils">
 					<div class="right-contents-view">
 						<!-- 데이터 리스트 - 하단 버튼들 -->
 						<p>
-							<a href="#" class="btn-normal">Delete</a>
-							<a href="./users_registration.html" class="btn-action">Register</a>
+							<a href="#" class="btn-normal">Cancel</a>
+							<a href="#" class="btn-action">Register</a>
 						</p>
 					</div>
 					
 					<div class="left-contents-view">
-						<!-- 데이터 리스트 네비게이션 -->
-						<div class="tbl-data-list-navigation">
-							<a href="#" class="btn first">처음으로</a>
-							<a href="#" class="btn prev">이전</a>
-							<a href="#" class="is-selected">1</a>
-							<a href="#">2</a>
-							<a href="#">3</a>
-							<a href="#">4</a>
-							<a href="#">5</a>
-							<a href="#">6</a>
-							<a href="#" class="btn next">다음</a>
-							<a href="#" class="btn last">마지막으로</a>
-						</div>
-
 					</div>
 				</div>
 

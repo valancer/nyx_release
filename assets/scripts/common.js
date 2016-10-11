@@ -29,6 +29,13 @@ var CommonMenus = (function ($) {
 		};//end init
 
 	function initLayout() {
+		// set menu on/off
+		var menu = $.cookie('menu');
+		$('body').attr('data-state', menu);
+
+		//set theme
+		var theme = $.cookie('theme');
+		$('html').attr('data-theme', theme);
 	}
 
 	function initEvent() {
@@ -36,6 +43,13 @@ var CommonMenus = (function ($) {
 		$toggleMenus.on('click', function(e) {
 			var state = $('body').attr('data-state');
 			$('body').attr('data-state', (state == '' || state == undefined) ? 'is-open' : '')
+			if( state == '' || state == undefined ) {
+				$.cookie('menu', 'is-open');
+				$('body').attr('data-state', 'is-open');
+			} else {
+				$.cookie('menu', '');
+				$('body').attr('data-state', '');
+			}
 		});
 
 		// side menu
@@ -143,7 +157,6 @@ var NodeOperationControl = (function ($) {
 
 	function _updateType(type) {
 		_currentType = type;
-		console.log("chagen control type : " + _currentType);
 	}
 
 	function _updateMode(isManual) {
