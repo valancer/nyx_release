@@ -18,6 +18,7 @@
 	<script src="assets/scripts/libs/jquery-clockpicker.min.js"></script>
 	<script src="assets/scripts/libs/odometer.min.js"></script>
 	<script src="assets/scripts/libs/jquery.cookie.js"></script>
+	<script src="assets/scripts/libs/bootstrap-slider-custom.js"></script>
 	<script src="assets/scripts/common.js"></script>
 	<!--[if lt IE 9]>
 		<script src="assets/scripts/libs/html5shiv.min.js"></script>
@@ -226,7 +227,10 @@
 				<div class="grid-dashboard">
 					<div class="grid-item map">
 						<div class="inner">
-							map
+
+							<div class="map-container">
+							</div>
+
 						</div>
 					</div>
 					<div class="grid-item other">
@@ -476,6 +480,12 @@
 		</div>
 	</main>
 
+<div class="loading">
+	<span class="txt">
+		<i class="spin"></i>
+		Loading
+	</span>
+</div>
 
 </body>
 </html>

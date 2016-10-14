@@ -18,6 +18,7 @@
 	<script src="assets/scripts/libs/jquery-clockpicker.min.js"></script>
 	<script src="assets/scripts/libs/odometer.min.js"></script>
 	<script src="assets/scripts/libs/jquery.cookie.js"></script>
+	<script src="assets/scripts/libs/bootstrap-slider-custom.js"></script>
 	<script src="assets/scripts/common.js"></script>
 	<!--[if lt IE 9]>
 		<script src="assets/scripts/libs/html5shiv.min.js"></script>
@@ -235,6 +236,7 @@
 						icon: 'alert-nagative',
 						content: '이미 등록된 아이디 입니다.<br>다시 입력해주세요.',
 						confirmButton: 'Cancel',
+						backgroundDismiss: false,
 						confirm: function(){
 							console.log('cancel');
 						}
@@ -250,6 +252,7 @@
 						content: '존에 포함된 모든 정보가 삭제됩니다.<br>정말 삭제하시겠습니까?',
 						confirmButton: 'OK',
 						cancelButton: 'Cancel',
+						backgroundDismiss: false,
 						cancel: function(){
 							console.log('cancel');
 						},
@@ -267,6 +270,7 @@
 						icon: 'alert-error',
 						content: '오류입니다. 다시 입력해주세요.',
 						confirmButton: 'Cancel',
+						backgroundDismiss: false,
 						confirm: function(){
 							console.log('cancel');
 						}
@@ -281,6 +285,7 @@
 						icon: 'alert',
 						content: 'NYX 등록을 신청했습니다.',
 						confirmButton: 'Cancel',
+						backgroundDismiss: false,
 						confirm: function(){
 							console.log('cancel');
 						}
