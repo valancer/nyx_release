@@ -225,7 +225,8 @@ $(document).ready(function(e) {
 
 	// tooltip
 	$('.btn-tooltip').tooltipster({
-		"arrow": false
+		"arrow": false,
+		"maxWidth": 200
 	});
 
 	CommonMenus.init();

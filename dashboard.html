@@ -95,10 +95,18 @@
 				</ul>
 			</li>
 			<li >
-				<a href="./users.html" class="menu user">User</a>
+				<a href="./users.html" class="menu user">Users</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./users.html">Users</a></li>
+				</ul>
 			</li>
 			<li >
 				<a href="./preferences.html" class="menu preferences">Preferences</a>
+
+				<ul class="list-sub-menus">
+					<li><a href="./preferences.html">Preferences</a></li>
+				</ul>
 			</li>
 		</ul>
 
@@ -300,89 +308,138 @@
 					<table class="tbl-alarm-list">
 						<caption></caption>
 						<colgroup>
-							<col style="width: 10%;">
-							<col style="width: 15%;">
-							<col style="width: 10%;">
-							<col>
-							<col style="width: 5%;">
+							<col style="width: 147px;">
+							<col style="width: 197px;">
+							<col style="width: 125px;">
+							<col style="width: auto;">
+							<col style="width: 74px;">
 						</colgroup>
 						<thead>
 							<tr>
-								<th scope="col" class="l">NODE ID</th>
+								<th scope="col">NODE ID</th>
 								<th scope="col">DATE</th>
 								<th scope="col">TYPE</th>
-								<th scope="col" class="l">EVENT</th>
+								<th scope="col">EVENT</th>
 								<th scope="col"></th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td class="l">0001.00000001</td>
-								<td>
-									<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
-								</td>
-								<td>NOISE</td>
-								<td class="l">
-									<em class="status-icon decibel" value="2.2"><span>DECIBEL</span></em>
-									<em class="status-icon frequency" value="13,900"><span>FREQUENCY</span></em>
-								</td>
-								<td>
-									<button type="button" class="btn-delete"><span>delete</span></button>
-								</td>
-							</tr>
-							<tr>
-								<td class="l">0001.00000002</td>
-								<td>
-									<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
-								</td>
-								<td>NOISE</td>
-								<td class="l">
-									<em class="status-icon decibel" value="2.2"><span>DECIBEL</span></em>
-									<em class="status-icon frequency" value="13,900"><span>FREQUENCY</span></em>
-									<em class="status-icon gps" value=""><span>GPS</span></em>
-								</td>
-								<td>
-									<button type="button" class="btn-delete"><span>delete</span></button>
-								</td>
-							</tr>
-							<tr>
-								<td class="l">0001.00000003</td>
-								<td>
-									<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
-								</td>
-								<td>STATUS</td>
-								<td class="l">
-									<em class="status-icon power" value="326.426"><span>POWER</span></em>
-									<em class="status-icon vibration fault" value="X200 Y158 Z123"><span>VIBRATION</span></em>
-								</td>
-								<td>
-									<button type="button" class="btn-delete"><span>delete</span></button>
-								</td>
-							</tr>
-							<tr>
-								<td class="l">0001.00000002</td>
-								<td>
-									<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
-								</td>
-								<td>NOISE</td>
-								<td class="l"></td>
-								<td>
-									<button type="button" class="btn-delete"><span>delete</span></button>
-								</td>
-							</tr>
-							<tr>
-								<td class="l">0001.00000003</td>
-								<td>
-									<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
-								</td>
-								<td>STATUS</td>
-								<td class="l"></td>
-								<td>
-									<button type="button" class="btn-delete"><span>delete</span></button>
-								</td>
-							</tr>
-						</tbody>
 					</table>
+
+					<div class="scroll-contents">
+						<table class="tbl-alarm-list">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 147px;">
+								<col style="width: 197px;">
+								<col style="width: 125px;">
+								<col style="width: auto;">
+								<col style="width: 74px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td>0001.00000001</td>
+									<td>
+										<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
+									</td>
+									<td>NOISE</td>
+									<td class="l">
+										<em class="status-icon decibel" value="2.2"><span>DECIBEL</span></em>
+										<em class="status-icon frequency" value="13,900"><span>FREQUENCY</span></em>
+									</td>
+									<td>
+										<button type="button" class="btn-delete"><span>delete</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>0001.00000002</td>
+									<td>
+										<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
+									</td>
+									<td>NOISE</td>
+									<td class="l">
+										<em class="status-icon decibel" value="2.2"><span>DECIBEL</span></em>
+										<em class="status-icon frequency" value="13,900"><span>FREQUENCY</span></em>
+										<em class="status-icon gps" value=""><span>GPS</span></em>
+									</td>
+									<td>
+										<button type="button" class="btn-delete"><span>delete</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>0001.00000003</td>
+									<td>
+										<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
+									</td>
+									<td>STATUS</td>
+									<td class="l">
+										<em class="status-icon power" value="326.426"><span>POWER</span></em>
+										<em class="status-icon vibration fault" value="X200 Y158 Z123"><span>VIBRATION</span></em>
+									</td>
+									<td>
+										<button type="button" class="btn-delete"><span>delete</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>0001.00000002</td>
+									<td>
+										<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
+									</td>
+									<td>NOISE</td>
+									<td class="l"></td>
+									<td>
+										<button type="button" class="btn-delete"><span>delete</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>0001.00000003</td>
+									<td>
+										<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
+									</td>
+									<td>STATUS</td>
+									<td class="l"></td>
+									<td>
+										<button type="button" class="btn-delete"><span>delete</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>0001.00000003</td>
+									<td>
+										<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
+									</td>
+									<td>STATUS</td>
+									<td class="l">
+										<em class="status-icon power" value="326.426"><span>POWER</span></em>
+										<em class="status-icon vibration fault" value="X200 Y158 Z123"><span>VIBRATION</span></em>
+									</td>
+									<td>
+										<button type="button" class="btn-delete"><span>delete</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>0001.00000002</td>
+									<td>
+										<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
+									</td>
+									<td>NOISE</td>
+									<td class="l"></td>
+									<td>
+										<button type="button" class="btn-delete"><span>delete</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>0001.00000003</td>
+									<td>
+										<time datetime="2016-09-22 20:21:19">2016-09-22 20:21:19</time>
+									</td>
+									<td>STATUS</td>
+									<td class="l"></td>
+									<td>
+										<button type="button" class="btn-delete"><span>delete</span></button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</aside>
 				<script>
 				$(document).ready(function(e) {
@@ -470,6 +527,12 @@
 								<td><em class="status-icon dimming txt-none"><span>DIMMING</span></em></td>
 								<td><em class="status-icon dimming fault txt-none"><span>DIMMING</span></em></td>
 								<td class="l">DIMMING</td>
+							</tr>
+							<tr>
+								<td class="l node"></td>
+								<td><em class="status-icon gps txt-none"><span>GPS</span></em></td>
+								<td><em class="status-icon gps fault txt-none"><span>GPS</span></em></td>
+								<td class="l">GPS</td>
 							</tr>
 						</tbody>
 					</table>
